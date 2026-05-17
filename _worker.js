@@ -4420,7 +4420,7 @@ async function 解析地址端口(proxyIP, 目标域名 = 'dash.cloudflare.com',
 
 		// 遍历数组中的每个IP元素进行处理
 		for (const singleProxyIP of 反代IP数组) {
-			if (singleProxyIP.includes('.william')) {
+			if (singleProxyIP.includes('.hyeri')) {
 				try {
 					let txtRecords = await DoH查询(singleProxyIP, 'TXT');
 					let txtData = txtRecords.filter(r => r.type === 16).map(r => /** @type {string} */(r.data));
@@ -4436,7 +4436,7 @@ async function 解析地址端口(proxyIP, 目标域名 = 'dash.cloudflare.com',
 						所有反代数组.push(...prefixes.map(prefix => 解析地址端口字符串(prefix)));
 					}
 				} catch (error) {
-					console.error('解析William域名失败:', error);
+					console.error('解析hyeri域名失败:', error);
 				}
 			} else {
 				let [地址, 端口] = 解析地址端口字符串(singleProxyIP);
